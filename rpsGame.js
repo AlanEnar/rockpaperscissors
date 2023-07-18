@@ -20,6 +20,9 @@ function playerChoice (){
         case "scissors":
             return 2;
             break;
+        default: 
+            alert("Invalid entry - reload page");
+            break;
     }
 }
 
@@ -62,5 +65,11 @@ function playRound (computerChoice, playerChoice){
 }
 
 function game (){
-    
+    let cd = computerChoice();
+    let pd = playerChoice();
+
+    let round = playRound(cd, pd);
+    console.log("Player chose " + choices[pd] + ", Computer chose " + choices[cd] + ", Result: " + outcomes[round]);
 }
+
+game();
