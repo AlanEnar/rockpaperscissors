@@ -8,6 +8,7 @@ function computerChoice (){
 }
 
 function playerChoice (){
+    // Create a variable to store the user's choice, converted to all lower case.
     let choice = prompt("Type 'Rock', 'Paper', or 'Scissors'").toLowerCase();
     
     switch (choice){
@@ -21,13 +22,11 @@ function playerChoice (){
             return 2;
             break;
         default: 
+            // If the player inputs something other than the three options, an error message will appear.
             alert("Invalid entry - reload page");
             break;
     }
 }
-
-let computerDecision = computerChoice();
-let playerDecision = Math.floor(Math.random()* 3);
 
 function playRound (computerChoice, playerChoice){
     //console.log("Player selects " + playerChoice);
@@ -65,11 +64,18 @@ function playRound (computerChoice, playerChoice){
 }
 
 function game (){
+    // Create variables with the two choices
     let cd = computerChoice();
     let pd = playerChoice();
 
+    // Create a variable storing the result of the round
     let round = playRound(cd, pd);
+
+    // Use the three variables and the arrays of choices and outcomes to log the game.
     console.log("Player chose " + choices[pd] + ", Computer chose " + choices[cd] + ", Result: " + outcomes[round]);
 }
 
-game();
+// Play 5 rounds
+for (var i = 5; i--;){
+    game();
+}
