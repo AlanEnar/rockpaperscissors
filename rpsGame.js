@@ -7,19 +7,32 @@ function computerChoice (){
     return randInt;
 }
 
-let test = computerChoice();
-//console.log("computerChoice returns " + test);
-//console.log("That equates to choosing " + choices[test]);
+function playerChoice (){
+    let choice = prompt("Type 'Rock', 'Paper', or 'Scissors'").toLowerCase();
+    
+    switch (choice){
+        case "rock":
+            return 0;
+            break;
+        case "paper":
+            return 1;
+            break;
+        case "scissors":
+            return 2;
+            break;
+    }
+}
 
+let computerDecision = computerChoice();
 let playerDecision = Math.floor(Math.random()* 3);
 
 function playRound (computerChoice, playerChoice){
-    console.log("Player selects " + playerChoice);
-    console.log("Computer selects " + computerChoice);
+    //console.log("Player selects " + playerChoice);
+    //console.log("Computer selects " + computerChoice);
 
     if (computerChoice === playerChoice){
         // if the two inputs are equal, it's a tie.
-        console.log("playRound returns a tie");
+        //console.log("playRound returns a tie");
         return 1;
     }
 
@@ -27,23 +40,27 @@ function playRound (computerChoice, playerChoice){
     switch ((playerChoice - computerChoice)){
         case 1:
             // Player wins
-            console.log("playRound returns player win");
+            //console.log("playRound returns player win");
             return 0;
             break;
         case -1:
             // Computer wins
-            console.log("playRound returns a computer win");
+            //console.log("playRound returns a computer win");
             return 2;
             break;
         case 2:
             // Computer wins
-            console.log("playRound returns a computer win");
+            //console.log("playRound returns a computer win");
             return 2;
             break;
         case -2:
             // Player wins
-            console.log("playRound returns player win");
+            //console.log("playRound returns player win");
             return 0;
             break;
     }
+}
+
+function game (){
+    
 }
