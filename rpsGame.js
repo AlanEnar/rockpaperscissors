@@ -1,12 +1,13 @@
 let choices = ["Rock", "Paper", "Scissors"];
 let outcomes = ["Player Wins", "Tie", "Computer Wins"];
 
-function computerChoice (){
+function getComputerChoice (){
     let randInt = Math.floor(Math.random()* 3);
     
     return randInt;
 }
 
+/*
 function playerChoice (){
     // Create a variable to store the user's choice, converted to all lower case.
     let choice = prompt("Type 'Rock', 'Paper', or 'Scissors'").toLowerCase();
@@ -26,6 +27,11 @@ function playerChoice (){
             alert("Invalid entry - reload page");
             break;
     }
+}
+*/
+
+function getPlayerChoice (){
+
 }
 
 function playRound (computerChoice, playerChoice){
@@ -63,10 +69,10 @@ function playRound (computerChoice, playerChoice){
     }
 }
 
-function game (){
+function playGame (){
     // Create variables with the two choices
-    let cd = computerChoice();
-    let pd = playerChoice();
+    let cd = getComputerChoice();
+    let pd = getPlayerChoice();
 
     // Create a variable storing the result of the round
     let round = playRound(cd, pd);
