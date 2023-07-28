@@ -75,7 +75,3 @@ function game (){
     console.log("Player chose " + choices[pd] + ", Computer chose " + choices[cd] + ", Result: " + outcomes[round]);
 }
 
-// Play 5 rounds
-for (var i = 5; i--;){
-    game();
-}
