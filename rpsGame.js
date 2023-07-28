@@ -31,9 +31,15 @@ function playerChoice (){
 */
 
 function getPlayerChoice (){
+    const btns = document.querySelectorAll("button");
 
+    btns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            alert(btn.id);
+        });
+    });
 }
-
+getPlayerChoice();
 function playRound (computerChoice, playerChoice){
     //console.log("Player selects " + playerChoice);
     //console.log("Computer selects " + computerChoice);
