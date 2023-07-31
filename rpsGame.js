@@ -33,7 +33,6 @@ function playerChoice (){
 function getPlayerChoice (){
     const btns = document.querySelectorAll("button");// Create a node list of buttons
     
-
     // Loop through the node list
     btns.forEach((btn) => {
         // Listen for clicks on each node
@@ -89,10 +88,10 @@ function playRound (computerChoice, playerChoice){
     }
 }
 
-function playGame (){
+function playGame (pd){
     // Create variables with the two choices
     let cd = getComputerChoice();
-    let pd = getPlayerChoice();
+    //let pd = getPlayerChoice();
 
     // Create a variable storing the result of the round
     let round = playRound(cd, pd);
@@ -101,3 +100,33 @@ function playGame (){
     console.log("Player chose " + choices[pd] + ", Computer chose " + choices[cd] + ", Result: " + outcomes[round]);
 }
 
+function manageClicks (){
+    const btns = document.querySelectorAll("button");// Create a node list of buttons
+    let clickChoice = null;
+
+    // Loop through the node list
+    btns.forEach((btn) => {
+        // Listen for clicks on each node
+        btn.addEventListener("click", () => {
+            // When there's a click, do something with the button's id
+            switch (btn.id){
+                case "rock-btn":
+                    clickChoice = 0;
+                    break;
+                case "paper-btn":
+                    clickChoice = 1;
+                    break;
+                case "scissors-btn":
+                    clickChoice = 2;
+                    break;
+                default:
+                    console.log("Unassigned button proccessed in manageClicks()");
+                    break;
+            }
+        });
+    });
+
+    runGame(clickChoice);
+}
+
+manageClicks();
