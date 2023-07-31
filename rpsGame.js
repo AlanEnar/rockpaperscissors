@@ -32,17 +32,34 @@ function playerChoice (){
 
 function getPlayerChoice (){
     const btns = document.querySelectorAll("button");// Create a node list of buttons
+    let clickedBtn = null;
 
     // Loop through the node list
     btns.forEach((btn) => {
         // Listen for clicks on each node
         btn.addEventListener("click", () => {
             // When there's a click, do something with the button's id
-            alert(btn.id);
+            switch (btn.id){
+                case "rock-btn":
+                    clickedBtn = 0;
+                    break;
+                case "paper-btn":
+                    clickedBtn = 1;
+                    break;
+                case "scissors-btn":
+                    clickedBtn = 2;
+                    break;
+                default:
+                    console.log("Unasigned button in getPlayerChoice");
+                    break;
+            }
         });
     });
+
+    return clickedBtn;
 }
-getPlayerChoice();
+
+console.log("Player chooses " + getPlayerChoice());
 
 function playRound (computerChoice, playerChoice){
     //console.log("Player selects " + playerChoice);
