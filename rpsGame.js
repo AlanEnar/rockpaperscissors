@@ -1,3 +1,13 @@
+// DOM manipulation variables and functions
+const resultsDiv = document.getElementById("results");
+
+function addResultPara (text){
+    let newP = document.createElement("p");
+
+    newP.textContent = text;
+    resultsDiv.appendChild(newP);
+}
+
 // Game variables and functions
 let choices = ["Rock", "Paper", "Scissors"];
 let outcomes = ["Player Wins", "Tie", "Computer Wins"];
@@ -70,20 +80,9 @@ function game (input){
     let round = playRound(cd, pd);
 
     // Use the three variables and the arrays of choices and outcomes to log the game.
-    console.log("Player chose " + choices[pd] + ", Computer chose " + choices[cd] + ", Result: " + outcomes[round]);
+    addResultPara("Player chose " + choices[pd] + ", Computer chose " + choices[cd] + ", Result: " + outcomes[round]);
 }
 
-// DOM manipulation variables and functions
-const resultsDiv = document.getElementById("results");
-
-function addResultPara (text){
-    let newP = document.createElement("p");
-
-    newP.textContent = text;
-    resultsDiv.appendChild(newP);
-}
-
-addResultPara("Hi world");
 // Run game when user presses a button
 const moveBtns = document.querySelectorAll("button");
 
