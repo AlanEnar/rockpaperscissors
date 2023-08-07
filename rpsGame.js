@@ -75,3 +75,12 @@ function game (){
     console.log("Player chose " + choices[pd] + ", Computer chose " + choices[cd] + ", Result: " + outcomes[round]);
 }
 
+// Button basics
+const moveBtns = document.querySelectorAll("button");
+
+moveBtns.forEach((button) => {
+    // and for each one we add a 'click' listener
+    button.addEventListener('click', () => {
+       alert(button.id); 
+    });
+});
