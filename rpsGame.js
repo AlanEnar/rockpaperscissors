@@ -7,18 +7,18 @@ function computerChoice (){
     return randInt;
 }
 
-function playerChoice (){
+function playerChoice (input){
     // Create a variable to store the user's choice, converted to all lower case.
-    let choice = prompt("Type 'Rock', 'Paper', or 'Scissors'").toLowerCase();
+    //let choice = prompt("Type 'Rock', 'Paper', or 'Scissors'").toLowerCase();
     
-    switch (choice){
-        case "rock":
+    switch (input){
+        case "rock-btn":
             return 0;
             break;
-        case "paper":
+        case "paper-btn":
             return 1;
             break;
-        case "scissors":
+        case "scissors-btn":
             return 2;
             break;
         default: 
@@ -79,7 +79,7 @@ function game (){
 const moveBtns = document.querySelectorAll("button");
 
 function handleClick (btnId){
-    console.log(btnId);
+    console.log(playerChoice(btnId));
 }
 
 moveBtns.forEach((button) => {
