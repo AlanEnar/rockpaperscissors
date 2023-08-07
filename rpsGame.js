@@ -1,3 +1,4 @@
+// Game variables and functions
 let choices = ["Rock", "Paper", "Scissors"];
 let outcomes = ["Player Wins", "Tie", "Computer Wins"];
 
@@ -72,7 +73,18 @@ function game (input){
     console.log("Player chose " + choices[pd] + ", Computer chose " + choices[cd] + ", Result: " + outcomes[round]);
 }
 
-// Button basics
+// DOM manipulation variables and functions
+const resultsDiv = document.getElementById("results");
+
+function addResultPara (text){
+    let newP = document.createElement("p");
+
+    newP.textContent = text;
+    resultsDiv.appendChild(newP);
+}
+
+addResultPara("Hi world");
+// Run game when user presses a button
 const moveBtns = document.querySelectorAll("button");
 
 moveBtns.forEach((button) => {
