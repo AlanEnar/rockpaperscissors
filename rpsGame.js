@@ -8,9 +8,6 @@ function computerChoice (){
 }
 
 function playerChoice (input){
-    // Create a variable to store the user's choice, converted to all lower case.
-    //let choice = prompt("Type 'Rock', 'Paper', or 'Scissors'").toLowerCase();
-    
     switch (input){
         case "rock-btn":
             return 0;
@@ -63,10 +60,10 @@ function playRound (computerChoice, playerChoice){
     }
 }
 
-function game (){
+function game (input){
     // Create variables with the two choices
     let cd = computerChoice();
-    let pd = playerChoice();
+    let pd = playerChoice(input);
 
     // Create a variable storing the result of the round
     let round = playRound(cd, pd);
@@ -79,7 +76,8 @@ function game (){
 const moveBtns = document.querySelectorAll("button");
 
 function handleClick (btnId){
-    console.log(playerChoice(btnId));
+    //console.log(playRound(computerChoice(), playerChoice(btnId)));
+    game(btnId);
 }
 
 moveBtns.forEach((button) => {
