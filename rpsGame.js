@@ -1,13 +1,12 @@
 let choices = ["Rock", "Paper", "Scissors"];
 let outcomes = ["Player Wins", "Tie", "Computer Wins"];
 
-function getComputerChoice (){
+function computerChoice (){
     let randInt = Math.floor(Math.random()* 3);
     
     return randInt;
 }
 
-/*
 function playerChoice (){
     // Create a variable to store the user's choice, converted to all lower case.
     let choice = prompt("Type 'Rock', 'Paper', or 'Scissors'").toLowerCase();
@@ -27,30 +26,6 @@ function playerChoice (){
             alert("Invalid entry - reload page");
             break;
     }
-}
-*/
-
-function getPlayerChoice (){
-    const btns = document.querySelectorAll("button");// Create a node list of buttons
-    
-    // Loop through the node list
-    btns.forEach((btn) => {
-        // Listen for clicks on each node
-        btn.addEventListener("click", () => {
-            // When there's a click, do something with the button's id
-            switch (btn.id){
-                case "rock-btn":
-                   break;
-                case "paper-btn":
-                    break;
-                case "scissors-btn":
-                    break;
-                default:
-                    break;
-            }
-        });
-    });
-
 }
 
 function playRound (computerChoice, playerChoice){
@@ -88,10 +63,10 @@ function playRound (computerChoice, playerChoice){
     }
 }
 
-function playGame (pd){
+function game (){
     // Create variables with the two choices
-    let cd = getComputerChoice();
-    //let pd = getPlayerChoice();
+    let cd = computerChoice();
+    let pd = playerChoice();
 
     // Create a variable storing the result of the round
     let round = playRound(cd, pd);
@@ -100,33 +75,3 @@ function playGame (pd){
     console.log("Player chose " + choices[pd] + ", Computer chose " + choices[cd] + ", Result: " + outcomes[round]);
 }
 
-function manageClicks (){
-    const btns = document.querySelectorAll("button");// Create a node list of buttons
-    let clickChoice = null;
-
-    // Loop through the node list
-    btns.forEach((btn) => {
-        // Listen for clicks on each node
-        btn.addEventListener("click", () => {
-            // When there's a click, do something with the button's id
-            switch (btn.id){
-                case "rock-btn":
-                    clickChoice = 0;
-                    break;
-                case "paper-btn":
-                    clickChoice = 1;
-                    break;
-                case "scissors-btn":
-                    clickChoice = 2;
-                    break;
-                default:
-                    console.log("Unassigned button proccessed in manageClicks()");
-                    break;
-            }
-        });
-    });
-
-    runGame(clickChoice);
-}
-
-manageClicks();
