@@ -75,14 +75,11 @@ function game (input){
 // Button basics
 const moveBtns = document.querySelectorAll("button");
 
-function handleClick (btnId){
-    //console.log(playRound(computerChoice(), playerChoice(btnId)));
-    game(btnId);
-}
-
 moveBtns.forEach((button) => {
-    // and for each one we add a 'click' listener
+    // For every button in the node list,
+    // Listen for a click
+    // and play a game with button's id determining choice
     button.addEventListener('click', () => {
-        handleClick(button.id);
+        game(button.id);
     });
 });
