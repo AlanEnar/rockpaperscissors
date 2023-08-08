@@ -1,5 +1,7 @@
 // DOM manipulation variables and functions
 const resultsDiv = document.getElementById("results");
+const playerScoreDiv = document.getElementById("player-score");
+const computerScoreDiv = document.getElementById("computer-score");
 
 function addResultPara (text){
     let newP = document.createElement("p");
@@ -8,9 +10,16 @@ function addResultPara (text){
     resultsDiv.appendChild(newP);
 }
 
+function editResults (pScore, cScore){
+    playerScoreDiv.textContent = "Player :" + pScore;
+    computerScoreDiv.textContent = "Computer: " + cScore;
+}
+
 // Game variables and functions
 let choices = ["Rock", "Paper", "Scissors"];
 let outcomes = ["Player Wins", "Tie", "Computer Wins"];
+let computerScore = 0;
+let playerScore = 0;
 
 function computerChoice (){
     let randInt = Math.floor(Math.random()* 3);
@@ -51,21 +60,25 @@ function playRound (computerChoice, playerChoice){
         case 1:
             // Player wins
             //console.log("playRound returns player win");
+            playerScore ++;
             return 0;
             break;
         case -1:
             // Computer wins
             //console.log("playRound returns a computer win");
+            computerScore ++;
             return 2;
             break;
         case 2:
             // Computer wins
             //console.log("playRound returns a computer win");
+            computerScore ++;
             return 2;
             break;
         case -2:
             // Player wins
             //console.log("playRound returns player win");
+            playerScore ++;
             return 0;
             break;
     }
@@ -80,6 +93,7 @@ function game (input){
     let round = playRound(cd, pd);
 
     // Use the three variables and the arrays of choices and outcomes to log the game.
+    editResults(playerScore, computerScore)
     addResultPara("Player chose " + choices[pd] + ", Computer chose " + choices[cd] + ", Result: " + outcomes[round]);
 }
 
