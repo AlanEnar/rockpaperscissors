@@ -90,16 +90,26 @@ function playRound (computerChoice, playerChoice){
 }
 
 function game (input){
-    // Create variables with the two choices
-    let cd = computerChoice();
-    let pd = playerChoice(input);
+    if (computerScore < 5 && playerScore < 5){
+        // Create variables with the two choices
+        let cd = computerChoice();
+        let pd = playerChoice(input);
 
-    // Create a variable storing the result of the round
-    let round = playRound(cd, pd);
+        // Create a variable storing the result of the round
+        let round = playRound(cd, pd);
 
-    // Use the three variables and the arrays of choices and outcomes to log the game.
-    editResults(playerScore, computerScore)
-    editLastRoundDiv("Player: " + choices[pd] + ", Computer:" + choices[cd] + ", Result: " + outcomes[round]);
+        // Use the three variables and the arrays of choices and outcomes to log the game.
+        editResults(playerScore, computerScore)
+        editLastRoundDiv("Player: " + choices[pd] + ", Computer:" + choices[cd] + ", Result: " + outcomes[round]);
+    } else {
+        let winner = computerScore > playerScore ? "Computer" : "Player";
+
+        alert(winner + " Wins! \nClose pop-up to play a new game.");
+
+        computerScore = 0;
+        playerScore = 0;
+        editResults(playerScore, computerScore);
+    }
 }
 
 // Run game when user presses a button
