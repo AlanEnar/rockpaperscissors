@@ -16,7 +16,7 @@ function editLastRoundDiv (text){
 }
 
 function editResults (pScore, cScore){
-    playerScoreDiv.textContent = "Player :" + pScore;
+    playerScoreDiv.textContent = "Player: " + pScore;
     computerScoreDiv.textContent = "Computer: " + cScore;
 }
 
