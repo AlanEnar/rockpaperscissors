@@ -1,5 +1,6 @@
 // DOM manipulation variables and functions
 const resultsDiv = document.getElementById("results");
+const lastRoundDiv = document.getElementById("last-round");
 const playerScoreDiv = document.getElementById("player-score");
 const computerScoreDiv = document.getElementById("computer-score");
 
@@ -10,6 +11,10 @@ function addResultPara (text){
     resultsDiv.appendChild(newP);
 }
 
+function editLastRoundDiv (text){
+    lastRoundDiv.textContent = text;
+}
+
 function editResults (pScore, cScore){
     playerScoreDiv.textContent = "Player :" + pScore;
     computerScoreDiv.textContent = "Computer: " + cScore;
@@ -18,7 +23,7 @@ function editResults (pScore, cScore){
 // Game variables and functions
 let choices = ["Rock", "Paper", "Scissors"];
 let outcomes = ["Player Wins", "Tie", "Computer Wins"];
-let computerScore = 0;
+let computerScore = 0;// Used to determine who wins 5 rounds first
 let playerScore = 0;
 
 function computerChoice (){
@@ -94,7 +99,7 @@ function game (input){
 
     // Use the three variables and the arrays of choices and outcomes to log the game.
     editResults(playerScore, computerScore)
-    addResultPara("Player chose " + choices[pd] + ", Computer chose " + choices[cd] + ", Result: " + outcomes[round]);
+    editLastRoundDiv("Player: " + choices[pd] + ", Computer:" + choices[cd] + ", Result: " + outcomes[round]);
 }
 
 // Run game when user presses a button
