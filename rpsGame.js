@@ -100,7 +100,7 @@ function game (input){
 
         // Use the three variables and the arrays of choices and outcomes to log the game.
         editResults(playerScore, computerScore)
-        editLastRoundDiv("Player: " + choices[pd] + ", Computer:" + choices[cd] + ", Result: " + outcomes[round]);
+        editLastRoundDiv("Player: " + choices[pd] + ", Computer: " + choices[cd] + "; " + outcomes[round]);
     } else {
         let winner = computerScore > playerScore ? "Computer" : "Player";
 
