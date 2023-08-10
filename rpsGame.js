@@ -106,6 +106,7 @@ function game (input){
         computerScore = 0;
         playerScore = 0;
         editResults(playerScore, computerScore);
+        editLastRoundDiv("Choose Button To Start")
     }
 }
 
