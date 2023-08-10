@@ -90,22 +90,26 @@ function playRound (computerChoice, playerChoice){
 }
 
 function game (input){
-    if (computerScore < 5 && playerScore < 5){
-        // Create variables with the two choices
-        let cd = computerChoice();
-        let pd = playerChoice(input);
+    // Create variables with the two choices
+    let cd = computerChoice();
+    let pd = playerChoice(input);
 
-        // Create a variable storing the result of the round
-        let round = playRound(cd, pd);
+    // Create a variable storing the result of the round
+    let round = playRound(cd, pd);
 
-        // Use the three variables and the arrays of choices and outcomes to log the game.
-        editResults(playerScore, computerScore)
-        editLastRoundDiv("Player: " + choices[pd] + ", Computer: " + choices[cd] + "; " + outcomes[round]);
-    } else {
+    // Use the three variables and the arrays of choices and outcomes to log the game.
+    editResults(playerScore, computerScore)
+    editLastRoundDiv("Player: " + choices[pd] + ", Computer: " + choices[cd] + "; " + outcomes[round]);
+
+    // Check to see if an entity has won five rounds;
+    if (playerScore >= 5 || computerScore >= 5){
+        // If so, figure out which entity won
         let winner = computerScore > playerScore ? "Computer" : "Player";
 
+        // Create a pop-up announcing the winner
         alert(winner + " Wins! \nClose pop-up to play a new game.");
 
+        // Reset scores and text
         computerScore = 0;
         playerScore = 0;
         editResults(playerScore, computerScore);
