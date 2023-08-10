@@ -10,12 +10,12 @@ function editLastRoundDiv (text){
 
 function editResults (pScore, cScore){
     playerScoreDiv.textContent = "Player: " + pScore;
-    computerScoreDiv.textContent = "Computer: " + cScore;
+    computerScoreDiv.textContent = "AI: " + cScore;
 }
 
 // Game variables and functions
 let choices = ["Rock", "Paper", "Scissors"];
-let outcomes = ["Player Wins", "Tie", "Computer Wins"];
+let outcomes = ["Player Wins", "Tie", "AI Wins"];
 let computerScore = 0;// Used to determine who wins 5 rounds first
 let playerScore = 0;
 
@@ -92,12 +92,12 @@ function game (input){
 
     // Use the three variables and the arrays of choices and outcomes to log the game.
     editResults(playerScore, computerScore)
-    editLastRoundDiv("Player: " + choices[pd] + ", Computer: " + choices[cd] + "; " + outcomes[round]);
+    editLastRoundDiv("Player: " + choices[pd] + ", AI: " + choices[cd] + "; " + outcomes[round]);
 
     // Check to see if an entity has won five rounds;
     if (playerScore >= 5 || computerScore >= 5){
         // If so, figure out which entity won
-        let winner = computerScore > playerScore ? "Computer" : "Player";
+        let winner = computerScore > playerScore ? "AI" : "Player";
 
         // Create a pop-up announcing the winner
         alert(winner + " Wins! \nClose pop-up to play a new game.");

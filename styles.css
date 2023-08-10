@@ -4,10 +4,12 @@
 
 body {
     background-color: rgb(233, 255, 228);
+    color: #093300;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 main {
-    width: 500px;
+    width: 750px;
     margin: auto;
 
     padding: 20px;
@@ -16,13 +18,28 @@ main {
     align-items: center;
     gap: 20px;
 
-    border-color: black;
+    border-color:  #093300;
     border-width: 5px;
-    border-style: solid;
+    border-style: double;
+}
+
+button {
+    background-color:  #093300;
+    color: #e9ffe4;
+    border: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+#last-round {
+    font-size: 30px;
+    font-weight: bold;
 }
 
 #results {
-    display: flex;
     justify-content: space-around;
+    display: flex;
     gap: 20px;
+
+    font-size: 20px;
 }
