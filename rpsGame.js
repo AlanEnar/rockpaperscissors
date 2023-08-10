@@ -4,13 +4,6 @@ const lastRoundDiv = document.getElementById("last-round");
 const playerScoreDiv = document.getElementById("player-score");
 const computerScoreDiv = document.getElementById("computer-score");
 
-function addResultPara (text){
-    let newP = document.createElement("p");
-
-    newP.textContent = text;
-    resultsDiv.appendChild(newP);
-}
-
 function editLastRoundDiv (text){
     lastRoundDiv.textContent = text;
 }
